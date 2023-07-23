@@ -1,0 +1,16 @@
+<!-- quora_app/templates/answer_question.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Answer the Question</title>
+</head>
+<body>
+    <h1>Answer the Question</h1>
+    <p><strong>{{ question.title }}</strong><br>{{ question.content }}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Answer</button>
+    </form>
+</body>
+</html>

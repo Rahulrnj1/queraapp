@@ -1,0 +1,20 @@
+<!-- quora_app/templates/index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quora-Inspired Website</title>
+  </head>
+  <body>
+    <h1>Questions</h1>
+    <ul>
+      {% for question in questions %}
+      <li>
+        <strong>{{ question.title }}</strong><br />
+        {{ question.content }}<br />
+        <em>Posted by: {{ question.user }}</em><br />
+        <a href="{% url 'answer_question' question.id %}">Answer</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
